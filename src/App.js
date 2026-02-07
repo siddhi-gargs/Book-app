@@ -1,6 +1,7 @@
 import BookProvider from "./BooksProvider";
 import Book from "./Components/Book";
 import SpecificBook from "./Components/SpecificBook";
+import NotFound from "./Components/NotFound";
 import "./App.css";
 import {
   Navigate,
@@ -20,6 +21,7 @@ function App() {
             path="/books/:bookId"
             element={<SpecificBook></SpecificBook>}
           ></Route>
+          <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
       </BookProvider>
     </Router>
