@@ -2,6 +2,7 @@ import BookProvider from "./BooksProvider";
 import Book from "./Components/Book";
 import SpecificBook from "./Components/SpecificBook";
 import NotFound from "./Components/NotFound";
+import { PrivateStuff } from "./Components/PrivateStuff";
 import "./App.css";
 import {
   Navigate,
@@ -9,6 +10,7 @@ import {
   BrowserRouter as Router,
   Routes,
 } from "react-router-dom";
+import Vaults from "./Components/Vaults";
 
 function App() {
   return (
@@ -22,6 +24,10 @@ function App() {
             element={<SpecificBook></SpecificBook>}
           ></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
+          <Route
+            path="/secret"
+            element={<PrivateStuff children={<Vaults />} />}
+          ></Route>
         </Routes>
       </BookProvider>
     </Router>
